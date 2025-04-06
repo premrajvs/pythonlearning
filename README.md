@@ -127,3 +127,5 @@ Write a program that attempts to open a file and read its contents. Use a try-ex
 Write a program that opens a file named "data.txt" in write mode ('w') and writes the following lines to it: "First line\nSecond line\nThird line". Use a with statement (context manager) to ensure the file is automatically closed.
 Write a program that opens the "data.txt" file from the previous question in read mode ('r') using a with statement and reads all the lines into a list. Print the list of lines.
 Write a program that opens a file named "numbers.txt" containing numbers separated by spaces. Read all the numbers, convert them to integers, and calculate their sum. Use a with statement for file handling.
+
+**24 and 25 has no assignments - Beginner level assignments are completed**
