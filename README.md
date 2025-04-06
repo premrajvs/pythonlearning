@@ -3,61 +3,52 @@ Repository to help learn Python programming in 100 days
 
 # Assignments
 **1. Variables and Data Types:**
-Create variables to store your first name, last name, and age. Print a sentence introducing yourself using these variables.
-Declare a variable price with a floating-point value. Then, create another variable quantity with an integer value. Calculate the total cost and store it in a new variable. Print the total cost.
-Write code to determine the data type of the following variables: a = 10, b = 3.14, c = "hello", d = True. Print the data type of each.
-Store a list of three of your favorite books in a variable called favorite_books. Print the list.
-Create a dictionary called student with the keys "name", "age", and "major". Assign appropriate values to these keys. Print the dictionary.
-Declare two boolean variables, is_sunny and is_warm. Write a conditional statement that prints "It's a pleasant day!" if both are True.
-What happens if you try to add a string and an integer in Python? Write a short code snippet to demonstrate and explain the result.
-Create a variable sentence containing a short sentence. Print the sentence. Then, create another variable word_count and store the number of words in the sentence. Print the word count.
-Declare a variable radius with a numeric value. Calculate the area of a circle using the formula πr². Store the result in a new variable and print it. (You can use math.pi for π).
-Create a tuple called colors with three color names. Try to change the first element of the tuple. Explain what happens and why.
+Create variables named item_name, item_price, and in_stock. Assign appropriate values (a string, a float, and a boolean) to these variables representing an item in a store. Print the values of each variable.
+Declare two integer variables, num1 and num2. Swap the values of these two variables without using a temporary variable. Print the values of num1 and num2 after the swap.
+Create a list called student_grades containing three numerical grades. Calculate the average of these grades and store the result in a new variable average_grade. Print the average grade.
 
 **2. Numbers (Integers, Floats):**
-Write a program that takes two integer inputs from the user and prints their sum, difference, product, and quotient (as a float).
-Calculate the average of five floating-point numbers that you define in your code. Print the average.
-Write code to check if a given integer is even or odd. Print an appropriate message.
-Calculate the remainder when 25 is divided by 7 using the modulo operator. Print the result.
-Write a program that converts a temperature given in Celsius to Fahrenheit using the formula: F = (C * 9/5) + 32. Take the Celsius temperature as input.
-Calculate the area of a triangle given its base and height (as floats). Print the area.
-Write code to determine if a number is positive, negative, or zero. Print an appropriate message.
-Calculate the result of 2 raised to the power of 5. Print the result.
-Write a program that takes the length and width of a rectangle as integer inputs and calculates its perimeter and area. Print both.
-What is the difference between integer division (//) and regular division (/) in Python? Provide two examples to illustrate.
+Write a program that takes the length and width of a rectangle as input (as floats) and calculates its area. Print the area formatted to one decimal place.
+Calculate the perimeter of a circle given its radius (take the radius as input as an integer). Use math.pi for the value of pi. Print the perimeter.
+Write code to determine if a given integer (take as input) is a multiple of 5. Print "Multiple of 5" or "Not a multiple of 5".
 
 **3. Strings:**
-Create a string variable containing your full name. Print the length of the string.
-Write code to convert a given string to uppercase and then to lowercase. Print both versions.
-Given the string "Python is fun!", extract the substring "is fun!". Print the substring.
-Write a program that takes a sentence as input from the user and counts the number of spaces in the sentence.
-Check if the string "hello world" starts with "hello". Print the boolean result.
-Replace all occurrences of the letter 'a' with 'o' in the string "banana". Print the modified string.
-Write code to split the string "apple,banana,cherry" into a list of individual fruits. Print the list.
-Join the elements of the list ["This", "is", "a", "sentence."] into a single string with spaces in between. Print the resulting string.
-Write a program that takes a word as input and checks if it is a palindrome (reads the same forwards and backward). Print "Palindrome" or "Not a palindrome".
-Explain the difference between single quotes (') and double quotes (") when defining strings in Python. Provide an example where one might be preferred over the other.
+Create a string variable containing a sentence. Write code to count the number of words in the sentence. Print the word count.
+Given the string "programming", extract the substring "gram". Print the extracted substring.
+Write a program that takes a word as input and checks if it ends with the letter 'g' (case-insensitive). Print True or False.
 
 **4. Lists:**
-Create a list of five different numbers. Print the element at index 2.
-Write code to add the number 10 to the end of a list and then insert the number 5 at the beginning of the list. Print the modified list.
-Given the list [1, 5, 2, 8, 3], write code to find the maximum and minimum values in the list. Print both.
-Write a program that takes a list of strings as input from the user and prints each string in reverse order.
-Remove the element at index 1 from a list. Print the updated list.
-Check if the value 7 is present in the list [3, 6, 7, 9, 1]. Print the boolean result.
-Write code to create a new list containing only the even numbers from the list [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]. Print the new list.
-Sort the list [5, 1, 9, 3, 7] in ascending order. Print the sorted list.
-Write a program that takes two lists of numbers as input and creates a new list containing only the elements that are common to both lists.
-Explain the difference between the append() and extend() methods for lists. Provide an example to illustrate.
+Create a list of your three favorite colors. Add another color to the end of the list and then remove the second color from the list. Print the final list.
+Given the list [10, 25, 5, 30, 15], write code to find the smallest number in the list. Print the smallest number.
+Write a program that takes a list of numbers as input (separated by spaces) from the user and then prints the list in reverse order.
 
 **5. Tuples:**
-Create a tuple with four different elements. Print the element at index 1.
-Write code to find the length of a given tuple.
-Try to change an element in a tuple. What happens? Explain why tuples are immutable.
-Given the tuple (10, 20, 30, 20, 40), write code to count the number of occurrences of the value 20.
-Create two tuples and then concatenate them into a new tuple. Print the new tuple.
-Write code to unpack the elements of the tuple (1, "hello", 3.14) into three separate variables. Print the variables.
-Check if the value "apple" is present in the tuple ("banana", "orange", "apple"). Print the boolean result.
-Write code to convert a list [1, 2, 3] into a tuple and then convert it back to a list. Print both.
-Explain a scenario where using a tuple might be more appropriate than using a list.
-Create a tuple containing the numbers from 1 to 5. Print each element of the tuple using a loop.
+Create a tuple representing the coordinates of a point in 2D space (x, y). Print the individual x and y coordinates.
+Given the tuple ("apple", "banana", "cherry", "date"), write code to find the index of the element "cherry". Print the index.
+Write a program that creates a tuple containing the first five even numbers (2, 4, 6, 8, 10). Print the tuple.
+
+**6. Dictionaries:**
+
+Create a dictionary to store the capital cities of three countries (e.g., "USA": "Washington D.C."). Print the capital of one of the countries.
+Given the dictionary {"name": "Alice", "age": 25}, write code to update the age to 26 and add a new key-value pair "city": "New York". Print the updated dictionary.
+Write a program that takes a string as input and counts the frequency of each character in the string (ignoring spaces). Store the results in a dictionary and print it.
+
+**7. Boolean Values (True, False):**
+Declare two variables, is_student (boolean) and age (integer). Write a boolean expression that evaluates to True if the person is a student and their age is less than 30. Print the result.
+Write code to check if a given number (take as input) is within the range of 10 to 20 (inclusive). Print True or False.
+Declare a boolean variable has_license. Write a conditional statement that prints "Can drive" if has_license is True, and "Cannot drive" otherwise.
+
+**8. Operators (Arithmetic, Comparison, Logical):**
+Write a program that takes the base and height of a parallelogram as input and calculates its area. Print the area.
+Write code that takes two numbers as input and checks if at least one of them is greater than 10. Print True or False.
+Evaluate the expression 15 % 4 + 3 * 2 ** 3 - 1. Write code to calculate and print the result.
+
+**9. Input and Output (print(), input()):**
+Write a program that prompts the user to enter their favorite programming language and then prints a message like "Your favorite programming language is [language]".
+Write code that takes the price of an item and the quantity purchased as input from the user (as floats and integers, respectively). Calculate the total cost and print it with a clear message.
+Write a program that asks the user for their name and age on separate lines and then prints a sentence combining this information.
+
+**10. Conditional Statements (if, elif, else):**
+Write a program that takes a number as input and prints whether it is even or odd.
+Write a program that takes a student's grade (A, B, C, D, or F) as input and prints a corresponding message (e.g., "Excellent!", "Good", "Average", "Passing", "Failed").
+Write a program that takes the current month as input (as a string) and prints the number of days in that month (you can assume February has 28 days for simplicity).
