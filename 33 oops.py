@@ -8,19 +8,25 @@ Real World: Modeling real-world entities (users, products, orders), building fra
 
 '''
 class Car:
+ #   make = ""
+ #   model = ""
+ #   color = ""
+    
     def __init__(self, make, model, color="black"):
-        self.make = make
+        self.make = make 
         self.model = model
         self.color = color
 
     def start_engine(self):
-        print("Engine started!")
+        print(f"{self.make} Engine {self.color} started!")
 
-    def display_info(self):
-        print(f"Make: {self.make}, Model: {self.model}, Color: {self.color}")
+Car1 = Car("Honda", "Civic", "red") # creating an object instance of the type Class and setting the value of variables
+Car1.start_engine()
 
-another_car = Car("Honda", "Civic", "red")
-another_car.display_info()
-another_car.start_engine()
+Car2 = Car("Toyota", "Corolla", "white")
+Car2.start_engine()
+
+Car3 = Car("Volvo", "XC 60") # takes default value when no value is set
+Car3.start_engine()
 
 # Try making changes like removing self, remove _init method and see what happens
