@@ -129,3 +129,5 @@ Write a program that opens the "data.txt" file from the previous question in rea
 Write a program that opens a file named "numbers.txt" containing numbers separated by spaces. Read all the numbers, convert them to integers, and calculate their sum. Use a with statement for file handling.
 
 **24 and 25 has no assignments - Beginner level assignments are completed**
+
+Will continue adding more concepts and assignments.
