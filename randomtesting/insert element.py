@@ -36,5 +36,6 @@ while i<j:
                 break
     except:
         print("")
-
+    finally:
+        print("")
 print(numberlist)

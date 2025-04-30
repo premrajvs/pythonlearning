@@ -18,7 +18,8 @@ class Car:
         self.color = color
 
     def start_engine(self):
-        print(f"{self.make} Engine {self.color} started!")
+        maker = "local" # this is a local variable which is only visible inside this method
+        print(f"{self.make} Engine {self.color} started! by {maker}")
 
 Car1 = Car("Honda", "Civic", "red") # creating an object instance of the type Class and setting the value of variables
 Car1.start_engine()
