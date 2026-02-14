@@ -3,4 +3,7 @@
 score = 75
 passing_score = 60
 passed = score >= passing_score
+print(score)
+score+=3
+print(score)
 print(f"Did the student pass? {passed}")
