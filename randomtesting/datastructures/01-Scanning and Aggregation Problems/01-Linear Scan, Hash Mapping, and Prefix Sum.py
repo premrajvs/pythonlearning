@@ -151,6 +151,22 @@ class Solution:
                 return i
             leftsum = leftsum + nums[i]
         return -1
+    
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        consequtiveones = 0
+        maxcon = 0
+        totallength = len(nums)
+        for i in range(totallength):
+            if nums[i] == 1:
+                consequtiveones = consequtiveones+1
+                if maxcon < consequtiveones:
+                    maxcon = consequtiveones
+            elif (nums[i] == 0 or i+1 == totallength) and consequtiveones > 0:
+                consequtiveones = 0
+                #if maxcon < consequtiveones:
+                   # maxcon = consequtiveones
+        return maxcon
+    
 class MinStack:
     def __init__(self):
         self.stack = []
