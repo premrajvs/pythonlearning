@@ -43,8 +43,13 @@ Step	Action	Deque State [Head ... Tail]	Head	Tail
 Always first element is Head = 1
 Always last element is Tail = 3
 **DIFFERENCE ** Push interacts with Tail and Pop interacts with Head
+.pop() is to remove the tail element and see the tail element
+.appendleft(value) is to add an element to head
 Always when i append, it moves Tail to new element
+
+When you want to rotate an array, always use % operator target%length so it becomes faster. If an array has 5 elements and if you want to rotate 5 times. 5%5=0 - no rotation needed. if rotation target is 6, 6%5=1 so you just rotate once. it is same effect.
  """
+from collections import deque
 from typing import List
 
 
@@ -167,6 +172,18 @@ class Solution:
                    # maxcon = consequtiveones
         return maxcon
     
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        numsqueue = deque(nums)
+        n = len(nums)
+        k %= n 
+        while k>0:
+            lastnumber = numsqueue.pop()
+            numsqueue.appendleft(lastnumber)
+            k=k-1 
+        nums[:] = list(numsqueue)
 class MinStack:
     def __init__(self):
         self.stack = []
