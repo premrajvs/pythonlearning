@@ -9,6 +9,8 @@
  Second, when you just say fi=findminmax, you are not creating a new object. you are renaming the class findminmax. like changing the name of the blueprint. Instead you should use () next to class name. now it creates object
 
  In Java you can have multiple classes and functions and then declare void main function in on class and it automatically becomes the entry point. But python runs top down. So, it does not work that way. When you import the python class in another class in a big project, you dont have to worry about what gets called when because code logic takes care of that. But if you want to run a file directly, use __name__ == "__main__". Python knows to run this automatically.
+ 
+ In python if i want to search if something exist, fastest data structure is Hashmap but if you do not want values, faster is set because it does not store any values.
  """
 from typing import List
 
@@ -63,6 +65,71 @@ class Solution:
             elif prices[i] - minimumprice > maxprofit:
                 maxprofit = prices[i] - minimumprice
         return maxprofit
+    
+    def containsDuplicate_slow(self, nums: List[int]) -> bool:
+        if len(nums)<1:
+            return False
+        nums = sorted(nums)
+        for i in range(1,len(nums)):
+            if nums[i]-nums[i-1]==0:
+                return True
+        return False
+    
+    def containsDuplicate_fast(self, nums: List[int]) -> bool:
+        if len(nums)<1:
+            return False
+        #nums = sorted(nums)
+        mymap = {}
+        for i in range(0,len(nums)):
+            if nums[i] in mymap:
+                return True
+            else:
+                mymap[nums[i]] = 0
+        return False
+    
+    def containsDuplicate_fastest(self, nums: List[int]) -> bool:
+        if len(nums)<1:
+            return False
+        #nums = sorted(nums)
+        mymap = set()
+        for i in range(0,len(nums)):
+            if nums[i] in mymap:
+                return True
+            mymap.add(nums[i])
+        return False
+
+    def majorityElement_slow(self, nums: List[int]) -> int:
+        targetcount = len(nums)/2
+        mymap = {}
+        for i in range(0,len(nums)):
+            if nums[i] in mymap:
+                mymap[nums[i]] = mymap[nums[i]]+1
+            else:
+                mymap[nums[i]] = 1
+            if mymap[nums[i]] >= targetcount:
+                    return nums[i]
+
+class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
+
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+        # If min_stack is empty or val <= current min, push to min_stack
+        if not self.min_stack or val <= self.min_stack[-1]:
+            self.min_stack.append(val)
+
+    def pop(self) -> None:
+        # If the value being removed is the current minimum, pop from min_stack too
+        if self.stack.pop() == self.min_stack[-1]:
+            self.min_stack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_stack[-1]
 
 if __name__ == "__main__":
     c1 = callingclass()

@@ -1,4 +1,4 @@
-class elements:
+class element:
     def __init__(self,value=None,nextelement=None):
         self.value = value
         self.nextelement = nextelement
@@ -8,27 +8,27 @@ class elements:
 #print(f"element is {e1.value} and next element is {e1.nextelement}")
 
 class customLinkedList():
-    def __init__(self,element=None):
+    def __init__(self,currentelement=None):
         # I am creating an empty element with None value and None next element
         # I am storing it in a separate variable so that I can refernce it later when i print
-        self.head = elements()
+        self.head = element(currentelement)
 
     def printcustomlinkedlist(self):
-        element = self.head
-        if element is None:
-            print(f"Element: {element.value} NextElement: {element.nextelement}")
+        currentelement = self.head
+        if currentelement is None:
+            print(f"Element: {currentelement.value} NextElement: {currentelement.nextelement}")
             return
-        print(element.value)
+        print(currentelement.value)
         #print(element.nextelement)
-        while element is not None:
-            element = element.nextelement
-            if element is not None:
-                print(element.value)
+        while currentelement is not None:
+            currentelement = currentelement.nextelement
+            if currentelement is not None:
+                print(currentelement.value)
                 #print(element.nextelement)
 
     def insetelement(self,*values):
         for item in values:
-            newelement = elements(item)
+            newelement = element(item)
             if self.head.value is None:
                 self.element = newelement
                 self.head = newelement
@@ -39,39 +39,39 @@ class customLinkedList():
                 print(f"new current element value: {self.element.value}")
 
     def deleteelement(self,value):
-        todelete = elements(value)
-        self.element = self.head
+        todelete = element(value)
+        self.currentelement = self.head
         while True:         
             if self.head.value is None:
                 print("List is empty")
                 return
-            elif self.element is None:
+            elif self.currentelement is None:
                 print("value do not exist")
                 return
             else:
-                if self.element.value == self.head.value and self.element.nextelement == self.head.nextelement:
+                if self.currentelement.value == self.head.value and self.currentelement.nextelement == self.head.nextelement:
                     #this is the first element. So, it does not have any previous elements.
                     #we only have to delete this element and move head to next element
-                    if self.element.value == todelete.value:
-                        self.head = self.element.nextelement
-                        self.element = None
-                        self.element = self.head
+                    if self.currentelement.value == todelete.value:
+                        self.head = self.currentelement.nextelement
+                        #self.element = None
+                        self.currentelement = self.head
                         return
                     #this is the first element and it is not equal to the element to be deleted.
                     #so, assigning this to a temp previous element
                     else:
-                        self.previouslement = self.element
-                        self.element = self.element.nextelement
+                        self.previouslement = self.currentelement
+                        self.currentelement = self.currentelement.nextelement
                 else:
                     #check if current value is equal to element to be deleted in a loop
                     # if yes, change previous element next element to this element
-                    if todelete.value == self.element.value:
-                        self.previouslement.nextelement = self.element.nextelement
-                        self.element.value = None
-                        self.element.nextelement = None
-                        break
+                    if todelete.value == self.currentelement.value:
+                        self.previouslement.nextelement = self.currentelement.nextelement
+                       # self.currentelement.value = None
+                       # self.currentelement.nextelement = None
+                        return
                     else:
-                        self.element = self.element.nextelement
+                        self.currentelement = self.currentelement.nextelement
 
 cl1 = customLinkedList()
 cl1.printcustomlinkedlist()
