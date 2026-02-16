@@ -12,6 +12,39 @@
  
  In python if i want to search if something exist, fastest data structure is Hashmap but if you do not want values, faster is set because it does not store any values.
  """
+
+""" 
+It is very important to understand how Stack and Queue works so you can use it in different scenarios. For example, in min stack requirement I am using stack. 
+
+Understanding summary.
+
+List [1, 2, 3] = List in Python always follows stack
+
+Step	Action	List State [Head ... Tail]	Head Value	Tail Value
+1	Push 1	[1]	1	1
+2	Push 2	[1, 2]	1	2
+3	Push 3	[1, 2, 3]	1	3
+4	Push 4	[1, 2, 3, 4]	1	4
+5	Push 5	[1, 2, 3, 4, 5]	1	5
+
+Always first element is Head = 1
+Always last element is Tail = 3
+Always push and pop both interacts with Tail that is 3
+Always when i append, it moves Tail to new element
+
+Now For Queue - default data structure is collections dequeue
+Step	Action	Deque State [Head ... Tail]	Head	Tail
+1	Enqueue 1	[1]	1	1
+2	Enqueue 2	[1, 2]	1	2
+3	Enqueue 3	[1, 2, 3]	1	3
+4	Enqueue 4	[1, 2, 3, 4]	1	4
+5	Enqueue 5	[1, 2, 3, 4, 5]	1	5
+
+Always first element is Head = 1
+Always last element is Tail = 3
+**DIFFERENCE ** Push interacts with Tail and Pop interacts with Head
+Always when i append, it moves Tail to new element
+ """
 from typing import List
 
 
@@ -109,6 +142,15 @@ class Solution:
             if mymap[nums[i]] >= targetcount:
                     return nums[i]
 
+    def pivotIndex(self, nums: List[int]) -> int:
+        lengthofnums = len(nums)
+        totalsum = sum(nums[0:lengthofnums])
+        leftsum = 0
+        for i in range(0,lengthofnums): 
+            if totalsum-leftsum-nums[i] == leftsum:
+                return i
+            leftsum = leftsum + nums[i]
+        return -1
 class MinStack:
     def __init__(self):
         self.stack = []
