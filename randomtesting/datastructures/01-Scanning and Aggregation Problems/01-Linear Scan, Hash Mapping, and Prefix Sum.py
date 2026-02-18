@@ -68,6 +68,40 @@ class findminmax:
                 maximum=number
         return minimum,maximum
 
+    """
+    When comparing 2 numbers there is a technique called pairwise comparison or Tournament technique. In my previous technique, I am comparing each number 2 times so it becomes o(2n).
+
+    Step 1 - Idea is instead of comparing 1 number to both min and max. You compare a pair all the time. To make a pair, i should check if it is even or odd. If even, i should start with pair. If total count is odd, i will take only 1 for the first time. so, going forward it will be pairs. set starting index value accordingly for the loop.
+
+    Step 2 - now each time, i compare current value and next value. The result i compare with previous min and max. So now i hop 2 elements at a time making it faster.
+
+    When input numbers are not sorted, you have to visit every element atleast once. You cannot avoid that but this way, you visit 2 elements each time.
+
+    """
+    def check_pairwise(self, arr):
+        n = len(arr)
+        if n == 0: return None, None
+        
+        # Initialize based on parity (even/odd length)
+        if n % 2 == 0:
+            min_val = min(arr[0], arr[1])   
+            max_val = max(arr[0], arr[1])
+            start_idx = 2
+        else:
+            min_val = max_val = arr[0]
+            start_idx = 1
+
+        # Process in pairs: O(1.5n) comparisons
+        for i in range(start_idx, n - 1, 2):
+            if arr[i] < arr[i + 1]:
+                min_val = min(min_val, arr[i])
+                max_val = max(max_val, arr[i + 1])
+            else:
+                min_val = min(min_val, arr[i + 1])
+                max_val = max(max_val, arr[i])
+                
+        return min_val, max_val
+
 class callingclass:
     def method1(self):
         #do nothing
