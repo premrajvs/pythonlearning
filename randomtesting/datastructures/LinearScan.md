@@ -29,3 +29,18 @@ Use hashmap because it is faster to update the value of an element by key and to
 The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
 
 Technique is to keep subtracting the sum on left side at each position and the number at current position from total sum and checking if it is equal to left sum
+
+# Linear Scan - o(n) - 189. Rotate Array
+
+To rotate an array you should use queue. Because queue has an o(1) to pop an element from tail and to append an element from the head side.
+
+Second point to remember - if an array has 5 elements. if you want to rotate by 5. do 5%5 times which is 0. Because rotating it 5 times will bring it back to same position. So, if the number is 100, do 100%5 = 0 times. this makes it faster
+
+# Linear Scan - o(n) - 1. Two Sum
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Best to use hashmap because it is faster to check if exist and also have key/value. If only check is needed, set is best
+val_to_index = {}
+if requirednumber in val_to_index:
+return [i,val_to_index[requirednumber]]
+val_to_index[num] = i
