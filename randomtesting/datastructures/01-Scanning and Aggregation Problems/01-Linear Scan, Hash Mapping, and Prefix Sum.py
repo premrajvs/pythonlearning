@@ -48,7 +48,10 @@ Always last element is Tail = 3
 Always when i append, it moves Tail to new element
 
 When you want to rotate an array, always use % operator target%length so it becomes faster. If an array has 5 elements and if you want to rotate 5 times. 5%5=0 - no rotation needed. if rotation target is 6, 6%5=1 so you just rotate once. it is same effect.
- """
+
+Remove range(len()): Iterating directly over the list (for price in prices) is faster than indexing (prices[i]) because it avoids repeated getitem calls.
+for p in prices: better than for price in range(len(prices))
+"""
 from collections import deque
 from typing import List
 
@@ -138,6 +141,21 @@ class Solution:
                 maxprofit = prices[i] - minimumprice
         return maxprofit
     
+    def maxProfit_fastest(self, prices: List[int]) -> int:
+        if not prices:
+            return 0
+        profit = 0
+        minimumprice = prices[0]
+        maxprofit = 0
+        for price in prices:
+            if prices<minimumprice:
+                minimumprice = prices
+            elif prices - minimumprice > maxprofit:
+                maxprofit = prices - minimumprice
+        return maxprofit
+
+ # Linear Scan - o(n) - 217. Contains Duplicate
+   
     def containsDuplicate_slow(self, nums: List[int]) -> bool:
         if len(nums)<1:
             return False
@@ -164,10 +182,10 @@ class Solution:
             return False
         #nums = sorted(nums)
         mymap = set()
-        for i in range(0,len(nums)):
-            if nums[i] in mymap:
+        for x in nums:
+            if x in mymap:
                 return True
-            mymap.add(nums[i])
+            mymap.add(x)
         return False
 
     def majorityElement_slow(self, nums: List[int]) -> int:
