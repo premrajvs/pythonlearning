@@ -44,3 +44,21 @@ val_to_index = {}
 if requirednumber in val_to_index:
 return [i,val_to_index[requirednumber]]
 val_to_index[num] = i
+
+# ########## Milestone 1
+
+Learning Summary
+
+1. Always try to do something is o(n) or at max o(2n) or o(3n).. never o(n2). It becomes order of n2 only when for every element you go through every element
+2. Use set when you want to check ifsomething exist. But remember set only can have distinct values and it is not guaranteed to maintain position when inserting because it may discard duplicate elements
+3. Use hash map when you want to look up but for both key and value scenarios
+
+Now that I learnt how to read elements, next is Precision Sum
+
+Precision sum magic formula
+Sum(i,j) = sum(j) - sum(i-1) or sum(j) - 0 if i = 0
+[10 20 30]
+sum(0) = 10
+sum(0,1) = sum(0) + sum(1) = 30
+sum(0,2) = sum(0) + sum(1) + sum(2) = 60
+as per formula, sum(0,2) = sum(2) = 60 sum(1,2) = sum(2) - sum(0) = 60 - 10 = 50
