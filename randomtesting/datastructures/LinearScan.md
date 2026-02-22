@@ -62,3 +62,5 @@ sum(0) = 10
 sum(0,1) = sum(0) + sum(1) = 30
 sum(0,2) = sum(0) + sum(1) + sum(2) = 60
 as per formula, sum(0,2) = sum(2) = 60 sum(1,2) = sum(2) - sum(0) = 60 - 10 = 50
+
+###### TRICK - SLIDING WINDOW ONLY WORKS WHEN ALL NUMBERS ARE POSITIVE
