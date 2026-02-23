@@ -53,7 +53,7 @@ Learning Summary
 2. Use set when you want to check ifsomething exist. But remember set only can have distinct values and it is not guaranteed to maintain position when inserting because it may discard duplicate elements
 3. Use hash map when you want to look up but for both key and value scenarios
 
-Now that I learnt how to read elements, next is Precision Sum
+Now that I learnt how to read elements, next is Precision Sum or Prefix Sum
 
 Precision sum magic formula
 Sum(i,j) = sum(j) - sum(i-1) or sum(j) - 0 if i = 0
@@ -66,3 +66,14 @@ as per formula, sum(0,2) = sum(2) = 60 sum(1,2) = sum(2) - sum(0) = 60 - 10 = 50
 ###### TRICK - SLIDING WINDOW ONLY WORKS WHEN ALL NUMBERS ARE POSITIVE
 
 ### Prefix Sum
+
+Using the formula learned above for precision sum, you know that
+sum(1,2) at 2nd position = sum(2) - sum(0)
+= total sum at position 2 - total sum at position 0
+
+Therefore,
+total sum at position 0 = total sum at position 2 - sum of a range of numbers
+
+When you are asked to find a range of numbers that sums to a value.
+
+Total sum at position 0 if equal to total sum at current position - target value, that implies this sub array is what we are looking for
