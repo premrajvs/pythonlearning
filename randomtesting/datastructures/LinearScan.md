@@ -77,3 +77,8 @@ total sum at position 0 = total sum at position 2 - sum of a range of numbers
 When you are asked to find a range of numbers that sums to a value.
 
 Total sum at position 0 if equal to total sum at current position - target value, that implies this sub array is what we are looking for
+
+### IMPORTANT LESSON ABOUT SLIDING WINDOW AND PREFIX SUM
+
+To solve these problems, in a paper first solve manually. Then find which is the smallest window.
+Reason is smallest window is only easy and feasible to calculate. Wherever the smallest window is present, you should start the loop from that side. This is the key.
