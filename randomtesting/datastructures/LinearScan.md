@@ -82,3 +82,9 @@ Total sum at position 0 if equal to total sum at current position - target value
 
 To solve these problems, in a paper first solve manually. Then find which is the smallest window.
 Reason is smallest window is only easy and feasible to calculate. Wherever the smallest window is present, you should start the loop from that side. This is the key.
+
+### Next Learning plan is Difference Array
+
+Main difference between prefix and diff array is
+Prefix sum = find sum of all elements in a range
+Diff array = Add or subtract to all elements in range a fixed number
