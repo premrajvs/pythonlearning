@@ -31,10 +31,10 @@ class Solution:
         for numPassengersi, fromi, toi in trips:
             if numPassengersi > capacity:
                 return False
-            locations[fromi-1] = locations[fromi-1] + numPassengersi
-            if toi <= maxd:
+            locations[fromi] = locations[fromi] + numPassengersi
+            if toi < maxd:
                 #print(toi)
-                locations[toi-1] = locations[toi-1] - numPassengersi
+                locations[toi] = locations[toi] - numPassengersi
                 #print(locations)
 
         for i in range(1,len(locations)):
@@ -45,4 +45,4 @@ class Solution:
 
 if __name__ == "__main__":
     c1 = Solution()
-    c1.carPooling([[2,1,5],[3,3,7]],4)
+    c1.carPooling([[2,1,5],[3,5,7]],3)

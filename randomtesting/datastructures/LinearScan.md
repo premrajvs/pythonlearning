@@ -88,3 +88,48 @@ Reason is smallest window is only easy and feasible to calculate. Wherever the s
 Main difference between prefix and diff array is
 Prefix sum = find sum of all elements in a range
 Diff array = Add or subtract to all elements in range a fixed number
+
+Difference array is not useful on its own. It is combined with prefix sum.
+
+Take an example - Car pooling. Passengers are traveling from from to to kilometer. Car has limited capacity.
+If anytime for any kilometer range if the number of passengers are more than capacity they cannot travel.
+
+Without differnece array, I should loop through each list from and to and in a list for each location add or subtract.
+With difference array, FIRST QUESTION TO ASK - Is the range inclusive at from and to ?
+Flight Booking Problem - Add seats to every flight from first to last. Keyword - INCLUDING last.
+[first, last] ← inclusive
+[1, 2, 10]
+If array is 0-based: Flight 1 → index 0 Flight 2 → index 1
+So range is: index 0 to index 1 (inclusive)
+diff[L] += val
+diff[R + 1] -= val
+Why R+1? = Because we want effect to stop AFTER R. So for booking [1,2,10]:
+diff[0] += 10 diff[2] -= 10 Because index 2 is first place we DON’T want 10.
+
+Car Pooling Problem = [passengers, from, to] Pick up at from and Drop off at to.
+Passengers are in car from: They are inside at from and They are NOT inside at to. So from inclusive. To not inclusive.
+so range is [from, to-1]
+[2, 1, 5] = Passengers are inside at 1, 2, 3, 4. so
+For half-open range [L, R): diff[L] += val and diff[R] -= val
+
+THIS IS HOW YOU DETERMINE HOW THE index range should be.
+
+###### LEARNING SUMMARY
+
+We already covered:
+Scanning (linear scan)
+Aggregation (prefix / diff)
+Now moving from aggregation over ranges to controlled scanning over ranges.
+
+Prefix Sum: “I precompute totals so I don’t recalculate”
+Difference Array: “I mark boundaries and aggregate later”
+Two Pointers: “I maintain a valid window and adjust it smartly”
+
+##### Two Pointers
+
+Think “Two Pointers” when you see:
+Sorted array
+Subarray / window
+Pairs
+Condition-based shrinking or expanding
+“Find if / find count / find max-min under constraint”
