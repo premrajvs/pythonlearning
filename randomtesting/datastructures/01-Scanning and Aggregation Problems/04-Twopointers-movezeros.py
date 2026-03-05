@@ -19,3 +19,13 @@ class Solution:
                         ci = ci + 1
                     nums[i+imv] = 0
                     #print("nums after",nums)
+
+class SolutionFastwith2pointers:
+    def moveZeroes(self, nums: List[int]) -> None:
+        iWrite = 0
+        for i in range(0,len(nums)):
+            if nums[i] != 0 :
+                nums[iWrite] = nums[i]
+                iWrite = iWrite + 1
+        for i in range(iWrite,len(nums)):
+            nums[i] = 0
