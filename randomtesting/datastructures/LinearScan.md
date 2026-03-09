@@ -138,3 +138,6 @@ Anytime you need 3 points to get an answer. Remember to keep the one point const
 Think of 2 pointers as one starting point 0 and one from the end length-1. and slowly move inwards on condition.
 
 #### Variable Sliding Window
+
+Window is nothing but left and right pointer. When to use window vs left right pointer. when you want continuous something, use window.
+Trick to remember, if you want something some data structure to store the position of something and retrieve in o(1) use hashmap dictionary.
