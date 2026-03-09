@@ -133,3 +133,8 @@ Subarray / window
 Pairs
 Condition-based shrinking or expanding
 “Find if / find count / find max-min under constraint”
+
+Anytime you need 3 points to get an answer. Remember to keep the one point constant. So, other 2 pointers become left and right.
+Think of 2 pointers as one starting point 0 and one from the end length-1. and slowly move inwards on condition.
+
+#### Variable Sliding Window
