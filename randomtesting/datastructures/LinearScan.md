@@ -193,3 +193,9 @@ When you want to rotate an array, always use % operator target%length so it beco
 
 Remove range(len()): Iterating directly over the list (for price in prices) is faster than indexing (prices[i]) because it avoids repeated getitem calls.
 for p in prices: better than for price in range(len(prices))
+
+# Monotonic Stack
+
+you will use a stack to store numbers in an order - increasing or decreasing based on the problem you want to solve
+So instead of going o(n square), you go o(2n)
+But remember you need a hash map to store key value to support your implementation
