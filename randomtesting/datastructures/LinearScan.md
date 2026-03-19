@@ -183,10 +183,10 @@ Step Action Deque State [Head ... Tail] Head Tail
 5 Enqueue 5 [1, 2, 3, 4, 5] 1 5
 
 Always first element is Head = 1
-Always last element is Tail = 3
+Always last element is Tail = 5
 **DIFFERENCE ** Push interacts with Tail and Pop interacts with Head
-.pop() is to remove the tail element and see the tail element
-.appendleft(value) is to add an element to head
+.popleft() is to remove the head element and see the head element
+.append(value) is to add an element to Tail
 Always when i append, it moves Tail to new element
 
 When you want to rotate an array, always use % operator target%length so it becomes faster. If an array has 5 elements and if you want to rotate 5 times. 5%5=0 - no rotation needed. if rotation target is 6, 6%5=1 so you just rotate once. it is same effect.

@@ -14,7 +14,8 @@ Example 3:
 
 Input: temperatures = [30,60,90]
 Output: [1,1,0] """
-
+    
+from collections import deque
 from typing import List
 
 
@@ -40,6 +41,42 @@ class Solution:
         
         return [valmap[num] for num in temperatures]
 
+    def dailyTemperatures2(self, temperatures: List[int]) -> List[int]:
+        
+        tempqueue = deque([])
+        qclearcount = 0
+        iCurrentPosition = 0
+        for num in temperatures:
+            while tempqueue:
+                minnumber = tempqueue.pop()
+                if num > minnumber:
+                    temperatures[iCurrentPosition-qdepth] = qdepth
+                    qclearcount = qclearcount - 1
+                else:
+                    tempqueue.appendleft(minnumber)
+                    break
+            tempqueue.append(num)   
+            qclearcount = qclearcount + 1
+            iCurrentPosition = iCurrentPosition + 1
+        
+        while qdepth > 0:
+            temperatures[iCurrentPosition-qdepth] = 0
+            qdepth = qdepth - 1
+        return [temperatures]
+    
+    def dailyTemperatures3(self, temperatures: List[int]) -> List[int]:
+        n = len(temperatures)
+        answer = [0] * n
+        stack = []  # stores indices: [i1, i2, ...]
+
+        for i, curr_temp in enumerate(temperatures):
+            # While stack is not empty and current temp is warmer than the temp at stack's top index
+            while stack and curr_temp > temperatures[stack[-1]]:
+                prev_index = stack.pop()
+                answer[prev_index] = i - prev_index
+            stack.append(i)
+            
+        return answer
 if __name__ == "__main__":
     c1 = Solution()
-    c1.dailyTemperatures([73,74,75,71,69,72,76,73])
+    c1.dailyTemperatures3([73,74,75,71,69,72,76,73])
